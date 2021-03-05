@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 }
+
+/* custom */
+body {
+  color: white;
+  background-color: #30363E;
+}
+/*  */
