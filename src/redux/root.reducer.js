@@ -12,7 +12,7 @@ const rootReducer = {
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: [""],
+  whitelist: ["people"],
 };
 
 export default persistReducer(persistConfig, combineReducers(rootReducer));
