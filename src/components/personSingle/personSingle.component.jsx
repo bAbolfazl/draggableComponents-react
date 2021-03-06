@@ -1,32 +1,29 @@
-import React from 'react';
+import React from "react";
 
-import { PersonSingleStyled } from './personSingle.styles';
+import { PersonSingleStyled } from "./personSingle.styles";
 
-import PERSONIMG from '../../assets/img/person.jpg';
+import PERSONIMG from "../../assets/img/person.jpg";
 
-const PersonSingle = ({ info, handleDrag, handleDrop }) => {
+const PersonSingle = ({ info, handleDrag, handleDrop, peopleNumber }) => {
+  const { name, id } = info;
 
-    const { name, id } = info
+  return (
+    <PersonSingleStyled
+      peopleNumber={peopleNumber}
+      img={PERSONIMG}
+      draggable={true}
+      id={id}
+      onDragOver={(ev) => ev.preventDefault()}
+      onDragStart={handleDrag}
+      onDrop={handleDrop}
+    >
+      <div className="person-single__img"></div>
 
-    return (
-        <PersonSingleStyled img={PERSONIMG}
-            draggable={true}
-            id={id}
-            onDragOver={(ev) => ev.preventDefault()}
-            onDragStart={handleDrag}
-            onDrop={handleDrop}
-        >
-
-            <div className="person-single__img">
-            </div>
-
-            <div className="person-single__name">
-                <div>
-                    {name}
-                </div>
-            </div>
-        </PersonSingleStyled>
-    );
+      <div className="person-single__name">
+        <div>{name}</div>
+      </div>
+    </PersonSingleStyled>
+  );
 };
 
 export default PersonSingle;

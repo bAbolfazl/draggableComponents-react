@@ -78,6 +78,7 @@ const PeopleList = ({ setPeopleList, selectPeopleList }) => {
               info={person}
               handleDrag={handleDrag}
               handleDrop={handleDrop}
+              peopleNumber={selectPeopleList.length}
             />
           ))}
       </div>
