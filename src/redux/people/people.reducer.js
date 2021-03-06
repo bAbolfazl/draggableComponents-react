@@ -1,21 +1,25 @@
-import peopleTypes from "./people.types"
+import peopleTypes from "./people.types";
 
 const INITIAL_STATE = {
-    list: [],
-}
+  list: [],
+};
 
 const peopleReducer = (state = INITIAL_STATE, action) => {
+  switch (action.type) {
+    case peopleTypes.SET_PEOPLE_DATA:
+      return {
+        ...state,
+        list: action.payload,
+      };
+    case peopleTypes.ADD_PEOPLE_DATA:
+      return {
+        ...state,
+        list: [...state.list, action.payload],
+      };
 
-    switch (action.type) {
-        case peopleTypes.SET_PEOPLE_DATA:
-            return {
-                ...state,
-                list: action.payload
-            }
+    default:
+      return state;
+  }
+};
 
-        default:
-            return state
-    }
-}
-
-export default peopleReducer
+export default peopleReducer;
