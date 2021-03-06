@@ -23,7 +23,7 @@ export const PersonSingleStyled = styled.div`
 
   .person-single__img {
     height: ${({ peopleNumber }) =>
-      `calc((50vh - 112px) / ${
+      `calc((60vh - 112px) / ${
         peopleNumber /
         (100 / (100 - peopleNumber * 10 < 20 ? 20 : 100 - peopleNumber * 10))
       })`};
